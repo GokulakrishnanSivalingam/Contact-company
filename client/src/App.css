@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", san-serif;
+    font-weight: 200;
+}
+
+h2 {
+    margin: 15px;
+    font-family: "Roboto", san-serif;
+    font-weight: 200;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px 20px;
+    height: 60px;
+    box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    width: 160px;
+    height: 50px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin-top: 40px;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links li a {
+    color: black;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 4px 0;
+}
+
+.nav-links li a:hover {
+    color: orange;
+}
+
+.login li {
+    border: 3px solid black;
+    color: white;
+    width: 70px;
+    border-radius: 6px;
+}
+
+.login li :hover {
+    background-color: black;
+    color: white;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.c,
+.c1,
+.c2,
+.c3 {
+    display: flex;
+}
+
+.cont2 {
+    margin-top: -250px;
+}
+
+.company input,
+.name input,
+.role select,
+.contact input,
+.email input,
+.post input,
+.project input,
+.city input {
+    width: 200px;
+    height: 45px;
+    border: 1px solid rgb(186, 182, 182);
+    ;
+    background-color: rgb(237, 231, 231);
+    margin-top: 8px;
+}
+
+.company,
+.name,
+.role,
+.contact,
+.email,
+.post,
+.project,
+.city {
+    margin: 10px;
+    margin-left: 10px;
+}
+
+.enquiry select,
+.country input {
+    width: 96%;
+    height: 45px;
+    border: 1px solid rgb(186, 182, 182);
+    background-color: rgb(237, 231, 231);
+    margin-top: 8px;
+}
+
+.enquiry,
+.country,
+.address {
+    margin: 10px;
+}
+
+textarea {
+    background-color: rgb(237, 231, 231);
+    margin-top: 8px;
+}
+
+button {
+    width: 60px;
+    height: 45px;
+    margin-left: 10px;
+    margin: 10px;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+.name,
+.mainoffice,
+.show1,
+.show2,
+.center1,
+.Unit2,
+.Unit3,
+.Unit4,
+.Unit5,
+.Unit6,
+.londonoffice,
+.dealer {
+    margin-top: 10px;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+a:hover {
+    color: orange;
+}
+
+a {
+    text-decoration-color: none;
+    color: black;
+}
+
+.vertical-line {
+    border-left: 1px solid orange;
+    height: 1150px;
+    margin: 0 10px;
+    color: orange;
+    margin: 40px;
+}
+
+.foot {
+    list-style: none;
+    margin: 0%;
+}
+
+.foot p {
+    margin-top: 25px;
+}
+
+.foot ul {
+    display: inline-flex;
+    float: right;
+    list-style: none;
+    margin-top: -35px;
+}
+
+.foot ul li a {
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.foot ul li {
+    margin-right: 10px;
+}
+
+p {
+    color: red;
+    font-size: 12px;
+    margin: 3;
+    font-weight: 300;
+}
