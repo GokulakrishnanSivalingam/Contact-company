@@ -88,7 +88,7 @@ h2 {
 }
 
 .cont2 {
-    margin-top: -250px;
+    margin-top: -150px;
 }
 
 .company input,
@@ -102,9 +102,8 @@ h2 {
     width: 200px;
     height: 45px;
     border: 1px solid rgb(186, 182, 182);
-    ;
     background-color: rgb(237, 231, 231);
-    margin-top: 8px;
+    margin-top: 5px;
 }
 
 .company,
@@ -115,8 +114,12 @@ h2 {
 .post,
 .project,
 .city {
-    margin: 10px;
+    margin: 5px;
     margin-left: 10px;
+}
+
+.name input {
+    margin-top: -1110px;
 }
 
 .enquiry select,
@@ -189,7 +192,7 @@ a {
     margin: 0%;
 }
 
-.foot p {
+.foot h4 {
     margin-top: 25px;
 }
 
@@ -209,9 +212,89 @@ a {
     margin-right: 10px;
 }
 
-p {
+.error {
     color: red;
     font-size: 12px;
     margin: 3;
     font-weight: 300;
+}
+
+@media (max-width:768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 40%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgb(240, 238, 238);
+        position: fixed;
+        z-index: 1000;
+        overflow: hidden;
+        transition: 0.4s;
+        margin-top: 0;
+    }
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        height: 40px;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 100;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .nav-links li {
+        margin: 25px;
+    }
+    .nav-links li a:hover {
+        background-color: white;
+        color: black;
+        width: 100%;
+        padding: 10px;
+    }
+    .hamburger {
+        display: flex;
+        position: relative;
+        z-index: 2001;
+        margin-right: 42px;
+    }
+    .container {
+        display: block;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .vertical-line {
+        display: none;
+    }
+    .cont2 {
+        margin-top: 70px;
+    }
+    .company input,
+    .name input,
+    .role select,
+    .contact input,
+    .email input,
+    .post input,
+    .project input,
+    .city input {
+        width: 198px;
+        height: 45px;
+        border: 1px solid rgb(186, 182, 182);
+        background-color: rgb(237, 231, 231);
+        margin-top: 5px;
+    }
+    .enquiry select,
+    .country input {
+        width: 89%;
+        height: 45px;
+        border: 1px solid rgb(186, 182, 182);
+        background-color: rgb(237, 231, 231);
+        margin-top: 8px;
+    }
 }

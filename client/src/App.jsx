@@ -265,7 +265,7 @@ else{
      <hr></hr> 
   
     <div className='foot'>
-    <p>&copy;K-LITE 2024||All Rights Reserved </p>;
+    <h4>&copy;K-LITE 2024||All Rights Reserved </h4>;
       <ul>
         <li><a href="#"><GrFacebookOption /></a></li>
         <li><a href="#"><IoLogoTwitter /></a></li>
