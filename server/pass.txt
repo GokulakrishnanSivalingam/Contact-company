@@ -1,0 +1,1 @@
+mongodb+srv://klite:QTMM3HPyKFn9J9lG@klite.w51rv.mongodb.net/?retryWrites=true&w=majority&appName=klite

@@ -4,21 +4,18 @@ const nodemailer = require("nodemailer");
 const app = express();
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+require('dotenv').config();
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const port = 4000;
+const uri = "mongodb+srv://klite:QTMM3HPyKFn9J9lG@klite.w51rv.mongodb.net/klitedb?retryWrites=true&w=majority&appName=klite";
 
-// MongoDB connection
-mongoose.connect("mongodb://localhost:27017/gamification")
-    .then(() => {
-        console.log("Enquiry database connected");
-    })
-    .catch((error) => {
-        console.error("Database connection error:", error);
-    });
+mongoose.connect("mongodb://localhost:27017/klite")
+    .then(() => console.log("Connected to MongoDB Atlas!"))
+    .catch((err) => console.error("Error connecting to MongoDB Atlas:", err));
 
 // Schema and Model
 const userschema = new mongoose.Schema({
@@ -33,7 +30,7 @@ const userschema = new mongoose.Schema({
     project: { type: String, required: true },
 });
 
-const collection = mongoose.model("enquiries", userschema);
+const collection = mongoose.model("enquiry", userschema);
 
 // POST Route
 app.post("/klite", async(req, res) => {
@@ -58,25 +55,29 @@ app.post("/klite", async(req, res) => {
         const transporter = nodemailer.createTransport({
             service: "gmail",
             auth: {
-                user: "sivalingamgokulakrishnan@gmail.com", // Ensure no spaces in the email
-                pass: "#*12345bala", // Replace with the actual password or app-specific password
+                user: process.env.USER,
+                pass: process.env.PASS,
             },
         });
-
         const mailOptions = {
-            from: `"Form Submission" <sivalingamgokulakrishnan@gmail.com>`,
-            to: datas.email,
-            subject: "New Form Submission",
-            text: `You have a new form submission:
-            - Company: ${datas.company}
-            - Name: ${datas.names}
-            - Contact: ${datas.contact}
-            - Address: ${datas.address}
-            - Country: ${datas.country}
-            - City: ${datas.city}
-            - Post: ${datas.post}
-            - Project: ${datas.project}`,
+            from: datas.email,
+            to: 'avskumar82@gmail.com',
+            subject: 'job title',
+            text: `Hello from sir iam ${datas.names}!
+            company:${datas.company}
+            name:${datas.names}
+            contact:${datas.contact}
+            email:${datas.email}
+            address:${datas.address} 
+            country:${datas.country}
+            city:${datas.city} 
+            pincode:${datas.post}
+            project:${datas.project}
+            check the information is right 
+            -------thank you----------
+            `,
         };
+
 
         transporter.sendMail(mailOptions);
         console.log("Email sent successfully");
@@ -90,5 +91,5 @@ app.post("/klite", async(req, res) => {
 
 // Start Server
 app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
+    console.log(`Server running at http: //localhost:${port}`);
 });
