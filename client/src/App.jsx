@@ -35,12 +35,13 @@ let isvalid;
   setError("please fill the field");
   isvalid=false;
   e.preventDefault();
+
 }
 else if(contact!==10)
   {
     setNError("please enter correct number");
     isvalid=false;
-    e.preventDefault();
+    
   
   }
 else{
@@ -258,7 +259,7 @@ else{
           <br />
         
       </div>
-      <button type='submit'> Submit</button></form>
+      <a href="www.google.com"><button type='submit'> Submit</button></a></form>
       </div>
     </div>
     

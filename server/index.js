@@ -11,13 +11,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const port = 4000;
-const uri = "mongodb+srv://klite:QTMM3HPyKFn9J9lG@klite.w51rv.mongodb.net/klitedb?retryWrites=true&w=majority&appName=klite";
 
-mongoose.connect("mongodb://localhost:27017/klite")
-    .then(() => console.log("Connected to MongoDB Atlas!"))
+
+mongoose.connect("mongodb+srv://gokul:1234@cluster0.givgn.mongodb.net/klitedb")
+    .then(() => console.log("db connected"))
     .catch((err) => console.error("Error connecting to MongoDB Atlas:", err));
 
-// Schema and Model
 const userschema = new mongoose.Schema({
     company: { type: String, required: true },
     names: { type: String, required: true },
@@ -30,9 +29,9 @@ const userschema = new mongoose.Schema({
     project: { type: String, required: true },
 });
 
-const collection = mongoose.model("enquiry", userschema);
+const collection = mongoose.model("store", userschema);
 
-// POST Route
+
 app.post("/klite", async(req, res) => {
     const datas = {
         company: req.body.company,
@@ -47,11 +46,11 @@ app.post("/klite", async(req, res) => {
     };
 
     try {
-        // Save to MongoDB
+
         const userdata = await collection.create(datas);
         console.log("Data saved to DB:", userdata);
 
-        // Send Email
+
         const transporter = nodemailer.createTransport({
             service: "gmail",
             auth: {
@@ -89,7 +88,7 @@ app.post("/klite", async(req, res) => {
     }
 });
 
-// Start Server
+
 app.listen(port, () => {
     console.log(`Server running at http: //localhost:${port}`);
 });
