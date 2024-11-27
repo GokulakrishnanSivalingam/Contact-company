@@ -50,7 +50,7 @@ else{
 }
 
 
-  const resp = await fetch('http://localhost:4000/klite', {
+  const resp = await fetch('https://contact-company-4.onrender.com/klite', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
