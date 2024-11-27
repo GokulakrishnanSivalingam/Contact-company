@@ -2,9 +2,9 @@ const express = require('express');
 const cors = require('cors');
 const nodemailer = require("nodemailer");
 const app = express();
-const bodyParser = require("body-parser");
+
 const mongoose = require("mongoose");
-require('dotenv').config();
+const dotenv = require('dotenv').config();
 
 app.use(cors());
 app.use(express.json());
@@ -25,7 +25,7 @@ const userschema = new mongoose.Schema({
     address: { type: String, required: true },
     country: { type: String, required: true },
     city: { type: String, required: true },
-    post: { type: String, required: true },
+    post: { type: Number, required: true },
     project: { type: String, required: true },
 });
 
@@ -55,7 +55,7 @@ app.post("/klite", async(req, res) => {
             service: "gmail",
             auth: {
                 user: process.env.USER,
-                pass: process.env.PASS,
+                pass: process.env.PASS
             },
         });
         const mailOptions = {
