@@ -59,10 +59,12 @@ app.post("/klite", async(req, res) => {
             },
         });
         const mailOptions = {
-            from: datas.email,
-            to: 'avskumar82@gmail.com',
+            from: 'avskumar82@gmail.com',
+            to: datas.email,
             subject: 'job title',
-            text: `Hello from sir iam ${datas.names}!
+            text: `Hello  ${datas.names}!, you fill the form for your job in our company klite private limited ,
+            we acknowledge you, please kindly check your information again 
+            -------------------------
             company:${datas.company}
             name:${datas.names}
             contact:${datas.contact}
@@ -72,7 +74,8 @@ app.post("/klite", async(req, res) => {
             city:${datas.city} 
             pincode:${datas.post}
             project:${datas.project}
-            check the information is right 
+            
+            we will contact you soon through mobile phone 
             -------thank you----------
             `,
         };
